@@ -1,0 +1,18 @@
+# typed: strict
+module Application
+  module UseCases
+    class List<%= plural_table_name.camelcase %>
+      extend T::Sig
+
+      sig { params(repository: Domain::Repositories::<%= class_name %>Repository).void }
+      def initialize(repository)
+        @repository = T.let(repository, Domain::Repositories::<%= class_name %>Repository)
+      end
+
+      sig { returns(T::Array[Domain::Entities::<%= class_name %>]) }
+      def call
+        @repository.all
+      end
+    end
+  end
+end
