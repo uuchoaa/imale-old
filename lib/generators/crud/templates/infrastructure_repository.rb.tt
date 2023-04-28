@@ -1,0 +1,53 @@
+# typed: strict
+
+module Infrastructure
+  module Repositories
+    module ActiveRecord
+
+      class <%= class_name %>Repository
+        include Domain::Repositories::<%= class_name %>Repository
+        extend T::Sig
+
+        sig { params(<%= file_name %>: Domain::Entities::<%= class_name %>).returns(Domain::Entities::<%= class_name %>) }
+        def create(<%= file_name %>)
+          <%= file_name %>_record = <%= class_name %>Record.create!(<%= file_name %>.attributes)
+          <%= file_name %>.id = <%= file_name %>_record.id
+          <%= file_name %>
+        end
+
+        sig { params(id: Integer).returns(T.nilable(Domain::Entities::<%= class_name %>)) }
+        def find(id)
+          <%= file_name %>_record = <%= class_name %>Record.find_by(id: id)
+          return nil if <%= file_name %>_record.nil?
+
+          Domain::Entities::<%= class_name %>.new(<%= file_name %>_record.attributes.symbolize_keys)
+        end
+
+        sig { returns(T::Array[Domain::Entities::<%= class_name %>]) }
+        def all
+          <%= class_name %>Record.all.map do |<%= file_name %>_record|
+            Domain::Entities::<%= class_name %>.new(<%= file_name %>_record.attributes.symbolize_keys)
+          end
+        end
+
+        sig { params(id: Integer).returns(T.nilable(Domain::Entities::<%= class_name %>)) }
+        def delete(id)
+          <%= file_name %>_record = <%= class_name %>Record.find_by(id: id)
+          return nil if <%= file_name %>_record.nil?
+
+          <%= file_name %>_record.destroy
+          Domain::Entities::<%= class_name %>.new(<%= file_name %>_record.attributes.symbolize_keys)
+        end
+
+        sig { params(<%= file_name %>: Domain::Entities::<%= class_name %>, attributes: T::Hash[Symbol, T.untyped]).returns(Domain::Entities::<%= class_name %>) }
+        def update(<%= file_name %>, attributes)
+          <%= file_name %>_record = <%= class_name %>Record.find(<%= file_name %>.id)
+          <%= file_name %>_record.update!(attributes)
+
+          Domain::Entities::<%= class_name %>.new(<%= file_name %>_record.attributes.symbolize_keys)
+        end
+      end
+
+    end
+  end
+end

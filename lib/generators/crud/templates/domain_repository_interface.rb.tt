@@ -1,0 +1,31 @@
+# typed: strict
+
+module Domain
+  module Repositories
+    module <%= class_name %>Repository
+      extend T::Sig
+      extend T::Helpers
+      interface!
+
+      sig { params(<%= file_name %>: Domain::Entities::<%= class_name %>).returns(Domain::Entities::<%= class_name %>) }
+      def create(<%= file_name %>)
+      end
+
+      sig { params(id: Integer).returns(T.nilable(Domain::Entities::<%= class_name %>)) }
+      def find(id)
+      end
+
+      sig { returns(T::Array[Domain::Entities::<%= class_name %>]) }
+      def all
+      end
+
+      sig { params(id: Integer).returns(T.nilable(Domain::Entities::<%= class_name %>)) }
+      def delete(id)
+      end
+
+      sig { params(<%= file_name %>: Domain::Entities::<%= class_name %>, attributes: T::Hash[Symbol, T.untyped]).returns(Domain::Entities::<%= class_name %>) }
+      def update(<%= file_name %>, attributes)
+      end
+    end
+  end
+end
