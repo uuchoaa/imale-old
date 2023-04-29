@@ -1,15 +1,12 @@
-# typed: strict
-module Application
-  module UseCases
-    class List<%= plural_table_name.camelcase %>
+module UseCases
+  class List<%= plural_table_name.camelcase %>
 
-      def initialize(repository)
-        @repository = T.let(repository, Domain::Repositories::<%= class_name %>Repository)
-      end
+    def initialize(repository)
+      @repository = repository
+    end
 
-      def call
-        @repository.all
-      end
+    def call
+      @repository.all
     end
   end
 end

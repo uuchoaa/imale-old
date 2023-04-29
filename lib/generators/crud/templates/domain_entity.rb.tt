@@ -1,15 +1,13 @@
-module Domain
-  module Entities
-    class <%= class_name %>
+module Entities
+  class <%= class_name %>
 <% attributes.each do |attribute| -%>
-      attr_accessor :<%= attribute.name %>
+    attr_accessor :<%= attribute.name %>
 <% end -%>
 
-      def initialize(<%= attributes.map { |a| "#{a.name}: nil" }.join(', ') %>)
+    def initialize(<%= attributes.map { |a| "#{a.name}: nil" }.join(', ') %>)
 <% attributes.each do |attribute| -%>
-        @<%= attribute.name %> = <%= attribute.name %>
+      @<%= attribute.name %> = <%= attribute.name %>
 <% end -%>
-      end
     end
   end
 end

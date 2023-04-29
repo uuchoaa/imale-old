@@ -10,7 +10,7 @@ class CrudGenerator < Rails::Generators::NamedBase
 
   def create_domain_file
     template "domain_entity.rb.tt", File.join("app/domain/entities", class_path, "#{file_name}.rb")
-    template "domain_repository_interface.rb.tt", File.join("app/domain/repositories", class_path, "#{file_name}_repository.rb")
+    template "domain_repository_interface.rb.tt", File.join("app/domain/repositories", class_path, "#{file_name}_repository_interface.rb")
   end
 
   def create_infrastructure_files

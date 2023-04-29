@@ -1,7 +1,7 @@
 module Repositories
-  module <%= class_name %>RepositoryInterface
+  module InstrumentRepositoryInterface
 
-    def create(<%= file_name %>)
+    def create(instrument)
       raise 'Should be implemented by subclasses'
     end
 
@@ -17,7 +17,7 @@ module Repositories
       raise 'Should be implemented by subclasses'
     end
 
-    def update(<%= file_name %>, attributes)
+    def update(instrument, attributes)
       raise 'Should be implemented by subclasses'
     end
   end
