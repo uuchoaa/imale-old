@@ -17,11 +17,11 @@ module CodespacesTryRails
     # in config/environments, which are processed later.
     #
     # config.time_zone = "Central Time (US & Canada)"
-    # config.eager_load_paths << Rails.root.join("extras")
 
     config.generators do |g|
       g.templates.unshift(File::expand_path('lib/generators/crud/templates'))
     end
+
     
   end
 end

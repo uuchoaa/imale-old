@@ -73,3 +73,10 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+group :development do
+  gem 'rbs'
+  gem 'rbs_rails'
+  gem 'steep'
+  gem 'solargraph'
+end
