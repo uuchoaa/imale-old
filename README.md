@@ -2,7 +2,7 @@
 
 Feature: any user can CRUD instrument
 - [x] Add tailwind
-- [ ] Add application shell
+- [ ] Add application shell como theme
 - [ ] Add template no index view
 - [ ] ...
 - [ ] Create new instrument
