@@ -12,12 +12,12 @@ module Repositories
         instrument_record = InstrumentRecord.find_by(id: id)
         return nil if instrument_record.nil?
 
-        Entities::Instrument.new(name: instrument_record.name)
+        Entities::Instrument.new(name: instrument_record.name, id: instrument_record.id)
       end
 
       def all
-        InstrumentRecord.all.map do |instrument_record|
-          Entities::Instrument.new(name: instrument_record.name)
+        InstrumentRecord.all.map do |record|
+          Entities::Instrument.new(name: record.name, id: record.id)
         end
       end
 
