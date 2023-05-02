@@ -8,16 +8,16 @@ module Repositories
         instrument
       end
 
-      def find(id)
+      def find(id:)
         instrument_record = InstrumentRecord.find_by(id: id)
         return nil if instrument_record.nil?
 
-        Domain::Entities::Instrument.new(instrument_record.attributes.symbolize_keys)
+        Entities::Instrument.new(name: instrument_record.name)
       end
 
       def all
         InstrumentRecord.all.map do |instrument_record|
-          Domain::Entities::Instrument.new(instrument_record.attributes.symbolize_keys)
+          Entities::Instrument.new(name: instrument_record.name)
         end
       end
 
