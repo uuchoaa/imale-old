@@ -80,3 +80,5 @@ group :development do
   gem 'steep'
   gem 'solargraph'
 end
+
+gem "phlex-rails", "= 1.0.0"
