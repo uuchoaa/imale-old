@@ -1,3 +1,19 @@
+## TO DO
+
+- [x] Config AutoComplete ~~com RBS e Steep~~ com solargraph
+- [ ] Gerar por padrão InMemory Repository e não ActiveRecord
+- [ ] Criar teste para ListInstrumetns
+- [ ] Add controller associando à um use case
+- [ ] Add tela
+- [ ] ...
+
+
+### might do
+
+- [ ] Add gerador para activerecord repository
+- [ ] Add gerador para UseCases (identificar por padrão os verbos de CRUD.. List<Entity>, CreateNew<Entity>, etc)
+- [ ] Gerador de CRUD gerar tbm os tests com MiniTest
+
 ## Generators
 
 Here is the final version of the `CRUDGenerator` class:

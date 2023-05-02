@@ -1,0 +1,4 @@
+include:
+  - app/**/*.rb
+  - lib/**/*.rb
+  - config/**/*.rb
