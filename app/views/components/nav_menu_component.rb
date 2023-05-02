@@ -1,8 +1,9 @@
 class NavMenuComponent < ApplicationComponent
 
   class NavMenuItemComponent < ApplicationComponent
-    def initialize(item: )
+    def initialize(item: , active:)
       @item = item
+      @active = active
 
       @base_class = "inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium"
       @regular_class = "text-gray-500 border-transparent hover:border-gray-300 hover:text-gray-700"
@@ -22,7 +23,7 @@ class NavMenuComponent < ApplicationComponent
     private
 
     def active?
-      @item.active
+      @active
     end
 
     def regular?
@@ -37,8 +38,23 @@ class NavMenuComponent < ApplicationComponent
 
   def template(&block)
     div(class: @base_class) do
+      last_active_menu = nil
+      active = false # only one active per NavMenu
+
       @items.each do |item|
-        render NavMenuItemComponent.new(item: item)
+
+        if item.active?
+
+          if last_active_menu.nil?
+            last_active_menu = item
+            active = true
+          else
+            active = false
+          end
+
+        end
+
+        render NavMenuItemComponent.new(item: item, active: active)
       end
     end
   end
