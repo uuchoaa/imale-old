@@ -35,3 +35,6 @@
 /config/master.key
 
 dump.rdb
+
+/app/assets/builds/*
+!/app/assets/builds/.keep

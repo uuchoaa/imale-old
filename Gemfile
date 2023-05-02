@@ -82,3 +82,5 @@ group :development do
 end
 
 gem "phlex-rails", "= 1.0.0"
+
+gem "tailwindcss-rails", "~> 2.0"

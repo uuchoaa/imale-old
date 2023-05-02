@@ -1,10 +1,22 @@
 ## TO DO
 
-- [x] Config AutoComplete ~~com RBS e Steep~~ com solargraph
+Feature: any user can CRUD instrument
+- [x] Add tailwind
+- [ ] Add application shell
+- [ ] Add template no index view
+- [ ] ...
+- [ ] Create new instrument
+- [ ] Show instrument
+- [ ] Edit instrument
+- [ ] Delete instrument
+- [ ] Add Layout with tailwind
+
+Feature: only admin user can CRUD instrument
+- [ ] add entity User
+- [ ] ListInstruments use case deve receber user e chekcar se perfil é admin: é regra de negócio, deve tá em UseCases!
+
 - [ ] Gerar por padrão InMemory Repository e não ActiveRecord
 - [ ] Criar teste para ListInstrumetns
-- [ ] Add controller associando à um use case
-- [ ] Add tela
 - [ ] ...
 
 
