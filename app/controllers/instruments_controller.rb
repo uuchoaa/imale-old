@@ -1,5 +1,4 @@
 class InstrumentsController < ApplicationController
-  layout -> { ApplicationLayout }
 
   def index
     repository = Repositories::ActiveRecord::InstrumentRepository.new

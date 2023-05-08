@@ -1,5 +1,4 @@
 class HelloController < ApplicationController
-  layout -> { ApplicationLayout }
 
   def index
     active_menu :home

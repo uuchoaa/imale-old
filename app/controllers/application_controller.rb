@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  layout -> { ApplicationLayout }
 
   protected
 
@@ -12,8 +13,8 @@ class ApplicationController < ActionController::Base
 
   def generate_menu_items(active_item)
     [
-      OpenStruct.new(active?: active_item == :home, path: root_path, label: 'Início', icon: '...'),
-      OpenStruct.new(active?: active_item == :instruments, path: instruments_path, label: 'Naipes', icon: '...')
+      OpenStruct.new(active?: active_item == :home, path: '/', label: 'Início', icon: '...'),
+      OpenStruct.new(active?: active_item == :management, path: '/cadastros', label: 'Cadastros', icon: '...')
     ]
   end
 end
