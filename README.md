@@ -1,5 +1,9 @@
 ## TO DO
 
+layout:
+* TailwindUI.
+* Depois das telas prontas, podemos permitir selecionar os _variants_ dos componentes. Como "Light nav with bottom border" ou "Dark nav with overlap" para o shell. Quanto mais a gente manter 1:1 com os componentes tailwind melhor (?)
+
 Feature: any user can CRUD instrument
 - [x] Add tailwind
 - [ ] Add application shell como theme
