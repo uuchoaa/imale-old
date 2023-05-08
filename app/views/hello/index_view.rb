@@ -20,6 +20,6 @@ class Hello::IndexView < ApplicationView
   end
 
   def template
-    h1(class: 'font-bold text-4xl text-blue-500') { "Início" }
+    hero text: "Início"
   end
 end

@@ -11,6 +11,12 @@ class ApplicationView < ApplicationComponent
     end
 	end
 
+  def hero(text:)
+    content_for :hero do
+      h1(class: "text-3xl font-bold leading-tight tracking-tight text-gray-900") { text }
+    end
+  end
+
 
 	# The ApplicationView is an abstract class for all your views.
 
