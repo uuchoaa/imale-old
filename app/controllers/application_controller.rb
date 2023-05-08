@@ -1,12 +1,19 @@
 class ApplicationController < ActionController::Base
 
-  protected def menu_items
-    #TODO: move labels to I18n
-    #TODO: fix mobile menu
-    [
-      OpenStruct.new(active?: false, path: root_path, label: 'Início', icon: '...'),
-      OpenStruct.new(active?: false, path: instruments_path, label: 'Naipes', icon: '...'), 
-    ]
+  protected
+
+  def active_menu(item)
+    @active_menu_item = item
   end
 
+  def menu_items
+    generate_menu_items(@active_menu_item)
+  end
+
+  def generate_menu_items(active_item)
+    [
+      OpenStruct.new(active?: active_item == :home, path: root_path, label: 'Início', icon: '...'),
+      OpenStruct.new(active?: active_item == :instruments, path: instruments_path, label: 'Naipes', icon: '...')
+    ]
+  end
 end

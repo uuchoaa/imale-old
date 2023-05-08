@@ -4,8 +4,6 @@ class ApplicationView < ApplicationComponent
   include Phlex::Rails::Helpers::ContentFor
 
   def before_template
-    Rails.logger.warn "Passei por aqui sim!!!"
-    Rails.logger.warn @menu_items
     return if @menu_items.nil? # this before_template runs even to ApplicationLayout
 
     content_for :nav_menu do
