@@ -13,8 +13,8 @@ class ApplicationController < ActionController::Base
 
   def generate_menu_items(active_item)
     [
-      OpenStruct.new(active?: active_item == :home, path: '/', label: 'Início', icon: '...'),
-      OpenStruct.new(active?: active_item == :management, path: '/cadastros/naipes', label: 'Cadastros', icon: '...')
+      MenuItemPresenter.new(active: active_item == :home, path: '/', label: 'Início', icon: '...'),
+      MenuItemPresenter.new(active: active_item == :management, path: '/cadastros/naipes', label: 'Cadastros', icon: '...')
     ]
   end
 end

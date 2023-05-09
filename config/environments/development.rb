@@ -77,5 +77,7 @@ Rails.application.configure do
   pf_host = "#{ENV['CODESPACE_NAME']}-3000.#{pf_domain}"
   config.hosts << pf_host
 
+  config.hosts = nil
+
   config.action_cable.allowed_request_origins = ["https://#{pf_host}"]
 end
