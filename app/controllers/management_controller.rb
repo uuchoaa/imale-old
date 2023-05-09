@@ -9,8 +9,8 @@ class ManagementController < ApplicationController
 
     # render Management::IndexView.new(menu_items: menu_items, main_area: Instruments::IndexView.new(instruments: instruments) )
     view = Management::IndexView.new(menu_items: menu_items) do |view|
-      view.main_area component: Instruments::IndexView.new(instruments: instruments)
       view.active_menu :instruments
+      view.main_area component: Instruments::IndexView.new(instruments: instruments)
     end
     render view
   end
