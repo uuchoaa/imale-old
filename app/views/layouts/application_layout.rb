@@ -132,9 +132,9 @@ class ApplicationLayout < ApplicationView
             main do
               div(class: "mx-auto max-w-7xl sm:px-6 lg:px-8") do
                 # comment { "Your content" }
-                div(class: "border rounded-lg p-4") do
+                # div(class: "border rounded-lg p-4") do
                   yield
-                end
+                # end
               end
             end
           end
