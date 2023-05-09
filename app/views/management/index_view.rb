@@ -22,16 +22,14 @@ class Management::IndexView < ApplicationView
           ]
 
           sidebar_menu.each do |menu_item|
-            
-            if menu_item.active?
-              li(class: "flex justify-between gap-x-6 py-2 rounded-l-md pl-4 bg-gray-50 border-transparent -translate-y-0.5 scale-101 border-r-2 border-r-indigo-500") do
-                link_to menu_item.label, menu_item.path, class: 'w-full'
-              end
-            else
-              li(class: "flex justify-between gap-x-6 py-2 cursor-pointer rounded-l-md pl-4 border-r-2 border-transparent hover:bg-gray-50  hover:-translate-y-0.5 hover:scale-101 hover:border-r-indigo-500 duration-300") do
-                link_to menu_item.label, menu_item.path, class: 'w-full'
-              end
-            end
+            active_class = "flex justify-between gap-x-6 py-2 rounded-l-md pl-4 bg-gray-50 border-transparent -translate-y-0.5 scale-101 border-r-2 border-r-indigo-500"
+            regular_class = "flex justify-between gap-x-6 py-2 cursor-pointer rounded-l-md pl-4 border-r-2 border-transparent hover:bg-gray-50  hover:-translate-y-0.5 hover:scale-101 hover:border-r-indigo-500 duration-300"
+
+            render NavMenuItemComponent.new(
+              item: menu_item, 
+              active_class: active_class, 
+              regular_class: regular_class
+            )
           end
 
         end
