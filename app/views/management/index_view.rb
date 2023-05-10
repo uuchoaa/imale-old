@@ -4,12 +4,17 @@ class Management::IndexView < ApplicationView
 
   def initialize(**props)
     @main_area = props[:main_area]
+    @right_area = props[:right_area]
     @menu_items = props[:menu_items]
     @active_menu_item = props[:active_menu]
   end
 
   def main_area(component:)
     @main_area = component
+  end
+
+  def right_area(component:)
+    @right_area = component
   end
 
   def active_menu(item_reference)
@@ -53,7 +58,7 @@ class Management::IndexView < ApplicationView
       end
 
       div(class: "flex w-full") do
-        div(class: "basis-1/2 px-0 py-6 sm:px-4 lg:pl-6 xl:flex-1 xl:pl-2") do
+        div(class: "basis-1/2 px-0 py-6 sm:px-4 xl:flex-1") do
           # h1 { "Main area" }
 
           if @main_area
@@ -63,6 +68,11 @@ class Management::IndexView < ApplicationView
         end
         div( class: "basis-1/2 border-gray-200 px-4 py-6 sm:px-4 sm:border-l lg:border-t-0 lg:pr-8 xl:pr-6" ) do
           # h1 { "Right column area" }
+
+          if @right_area
+            render @right_area
+          end
+
         end
       end
     end

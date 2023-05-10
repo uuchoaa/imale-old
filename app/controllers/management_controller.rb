@@ -1,5 +1,22 @@
 class ManagementController < ApplicationController
 
+  def instruments_new
+    repository = Repositories::ActiveRecord::InstrumentRepository.new
+    use_case = UseCases::ListInstruments.new(repository)
+    instruments = use_case.call
+
+    active_menu :management
+
+    # render Management::IndexView.new(menu_items: menu_items, main_area: Instruments::IndexView.new(instruments: instruments) )
+    view = Management::IndexView.new(menu_items: menu_items) do |view|
+      view.active_menu :instruments
+      view.main_area component: Instruments::IndexView.new(instruments: instruments)
+      view.right_area component: Instruments::FormView.new(instrument: {})
+    end
+
+    render view
+  end
+
   def instruments
     repository = Repositories::ActiveRecord::InstrumentRepository.new
     use_case = UseCases::ListInstruments.new(repository)
