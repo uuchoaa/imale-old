@@ -16,8 +16,8 @@ O objetivo é setar a aplicação com um crud simples funcional e termos experi�
 - [x] add link para turmas
 - [x] add layout management com 3 colunas
 - [x] add listagem de naipes
-- [ ] add novo naipe
-- [ ] usar stimulus para evitar carregar todo o html (precisamos nos familiarizar)
+- [x] add FormBuiler
+- [ ] usar turbo-streams/stimulus para evitar carregar todo o html (precisamos nos familiarizar)
 - [ ] add editar naipe
 - [ ] add apagar naipe
 
