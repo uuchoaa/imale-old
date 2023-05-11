@@ -1,27 +1,45 @@
 ## TO DO
 
-layout:
-* TailwindUI.
-* Depois das telas prontas, podemos permitir selecionar os _variants_ dos componentes. Como "Light nav with bottom border" ou "Dark nav with overlap" para o shell. Quanto mais a gente manter 1:1 com os componentes tailwind melhor (?)
+- [ ] que dia termina a turma 1? quando vai ser a inscrição?
 
-Feature: any user can CRUD instrument
-- [x] Add tailwind
-- [ ] Add application shell como theme
-- [ ] Add template no index view
+Feature CRUD de naipes:
+O objetivo é setar a aplicação com um crud simples funcional e termos experiência prática 
+- [x] setup
+- [x] add tailwind
+- [x] add gerador para criar entidades
+- [x] add gerador para criar repositorios
+- [x] add gerador para criar casos de uso
+- [x] definir layout
+- [x] add layout component
+- [x] add application menus
+- [x] add link para naipes
+- [x] add link para turmas
+- [x] add layout management com 3 colunas
+- [x] add listagem de naipes
+- [ ] add novo naipe
+- [ ] usar stimulus para evitar carregar todo o html (precisamos nos familiarizar)
+- [ ] add editar naipe
+- [ ] add apagar naipe
+
+Feature: CRUD de turmas
+Cadastrar turma definindo número de vagas para cada Naipe.
+
 - [ ] ...
-- [ ] Create new instrument
-- [ ] Show instrument
-- [ ] Edit instrument
-- [ ] Delete instrument
-- [ ] Add Layout with tailwind
 
-Feature: only admin user can CRUD instrument
-- [ ] add entity User
-- [ ] ListInstruments use case deve receber user e chekcar se perfil é admin: é regra de negócio, deve tá em UseCases!
 
-- [ ] Gerar por padrão InMemory Repository e não ActiveRecord
-- [ ] Criar teste para ListInstrumetns
-- [ ] ...
+Feature: Permitir inscrições para a turma aberta
+* Add form em link publico
+* Add tela de confirmação
+* Lembrar de não limitar as inscrições por número de vagas (se passar de inscritos haverá sorteio)
+
+Feature: Add usuário admin
+* Todas as páginas são privadas, menos home e da inscrição. 
+* Podemos usar autenticação do Facebook para o admin
+* Por ora um inscrito não é usuário
+
+Feature: Sortear inscritos para uma turma
+
+
 
 
 ### might do
